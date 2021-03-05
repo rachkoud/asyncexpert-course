@@ -93,7 +93,7 @@ M00_L01:
        mov       rcx,rdi
        call      System.Collections.Generic.Dictionary`2[[System.UInt64, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]].Initialize(Int32)
 M01_L00:
-       mov       rdx,1B5E09D2DF8
+       mov       rdx,20938BF2DF8
        cmp       rsi,[rdx]
        je        short M01_L01
        lea       rcx,[rdi+18]
@@ -138,9 +138,9 @@ M02_L00:
        je        short M02_L01
        mov       rcx,r15
        mov       rdx,rdi
-       mov       r11,7FF9006E03F8
+       mov       r11,7FF903BA03F8
        cmp       [rcx],ecx
-       call      qword ptr [7FF900A703F8]
+       call      qword ptr [7FF903F303F8]
        mov       r12d,eax
        jmp       short M02_L02
 M02_L01:
@@ -223,9 +223,9 @@ M02_L08:
        mov       rdx,[r11+8]
        mov       rcx,r15
        mov       r8,rdi
-       mov       r11,7FF9006E03F0
+       mov       r11,7FF903BA03F0
        cmp       [rcx],ecx
-       call      qword ptr [7FF900A703F0]
+       call      qword ptr [7FF903F303F0]
        test      eax,eax
        mov       r9,[rsp+30]
        je        short M02_L11
@@ -361,7 +361,7 @@ M02_L22:
        jl        short M03_L00
        mov       rcx,rsi
        mov       rdx,rdi
-       mov       rax,[7FF900A6F370]
+       mov       rax,[7FF903F2F370]
        add       rsp,20
        pop       rbx
        pop       rsi
@@ -517,7 +517,7 @@ M00_L01:
        mov       rcx,rdi
        call      System.Collections.Generic.Dictionary`2[[System.UInt64, System.Private.CoreLib],[System.UInt64, System.Private.CoreLib]].Initialize(Int32)
 M01_L00:
-       mov       rdx,21F10002DF8
+       mov       rdx,212D88C2DF8
        cmp       rsi,[rdx]
        je        short M01_L01
        lea       rcx,[rdi+18]
@@ -562,9 +562,9 @@ M02_L00:
        je        short M02_L01
        mov       rcx,r15
        mov       rdx,rdi
-       mov       r11,7FF9006D03F8
+       mov       r11,7FF903BB03F8
        cmp       [rcx],ecx
-       call      qword ptr [7FF900A603F8]
+       call      qword ptr [7FF903F403F8]
        mov       r12d,eax
        jmp       short M02_L02
 M02_L01:
@@ -647,9 +647,9 @@ M02_L08:
        mov       rdx,[r11+8]
        mov       rcx,r15
        mov       r8,rdi
-       mov       r11,7FF9006D03F0
+       mov       r11,7FF903BB03F0
        cmp       [rcx],ecx
-       call      qword ptr [7FF900A603F0]
+       call      qword ptr [7FF903F403F0]
        test      eax,eax
        mov       r9,[rsp+30]
        je        short M02_L11
@@ -785,7 +785,7 @@ M02_L22:
        jl        short M03_L00
        mov       rcx,rsi
        mov       rdx,rdi
-       mov       rax,[7FF900A5F370]
+       mov       rax,[7FF903F3F370]
        add       rsp,20
        pop       rbx
        pop       rsi

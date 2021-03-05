@@ -2,7 +2,7 @@
 <html lang='en'>
 <head>
 <meta charset='utf-8' />
-<title>Dotnetos.AsyncExpert.Homework.Module01.Benchmark.FibonacciCalc-20210305-153503</title>
+<title>Dotnetos.AsyncExpert.Homework.Module01.Benchmark.FibonacciCalc-20210305-160126</title>
 
 <style type="text/css">
 	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
@@ -22,14 +22,14 @@ Intel Core i9-9880H CPU 2.30GHz, 1 CPU, 16 logical and 8 physical cores
 <pre><code></code></pre>
 
 <table>
-<thead><tr><th>            Method</th><th>n</th><th>      Mean</th><th>   Error</th><th>  StdDev</th><th>Ratio</th><th>Code Size</th>
+<thead><tr><th>            Method</th><th>n</th><th>      Mean</th><th>   Error</th><th>  StdDev</th><th>Ratio</th><th>Code Size</th><th>Gen 0</th><th>Gen 1</th><th>Gen 2</th><th>Allocated</th>
 </tr>
-</thead><tbody><tr><td>Recursive</td><td>15</td><td>2,145.21 ns</td><td>34.520 ns</td><td>32.290 ns</td><td>1.000</td><td>76 B</td>
-</tr><tr><td>RecursiveWithMemoization</td><td>15</td><td>49.97 ns</td><td>0.918 ns</td><td>0.982 ns</td><td>0.023</td><td>294 B</td>
-</tr><tr><td>Iterative</td><td>15</td><td>11.28 ns</td><td>0.229 ns</td><td>0.215 ns</td><td>0.005</td><td>62 B</td>
-</tr><tr><td>Recursive</td><td>35</td><td>33,222,017.78 ns</td><td>645,191.820 ns</td><td>603,512.828 ns</td><td>1.000</td><td>76 B</td>
-</tr><tr><td>RecursiveWithMemoization</td><td>35</td><td>135.11 ns</td><td>2.364 ns</td><td>2.095 ns</td><td>0.000</td><td>294 B</td>
-</tr><tr><td>Iterative</td><td>35</td><td>23.99 ns</td><td>0.355 ns</td><td>0.297 ns</td><td>0.000</td><td>62 B</td>
+</thead><tbody><tr><td>Recursive</td><td>15</td><td>2,198.75 ns</td><td>43.222 ns</td><td>42.449 ns</td><td>1.000</td><td>76 B</td><td>-</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>RecursiveWithMemoization</td><td>15</td><td>51.41 ns</td><td>0.990 ns</td><td>0.926 ns</td><td>0.023</td><td>294 B</td><td>0.0172</td><td>-</td><td>-</td><td>144 B</td>
+</tr><tr><td>Iterative</td><td>15</td><td>11.00 ns</td><td>0.174 ns</td><td>0.154 ns</td><td>0.005</td><td>62 B</td><td>-</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>Recursive</td><td>35</td><td>33,149,055.36 ns</td><td>430,987.637 ns</td><td>382,059.314 ns</td><td>1.000</td><td>76 B</td><td>-</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>RecursiveWithMemoization</td><td>35</td><td>139.30 ns</td><td>2.047 ns</td><td>1.709 ns</td><td>0.000</td><td>294 B</td><td>0.0362</td><td>-</td><td>-</td><td>304 B</td>
+</tr><tr><td>Iterative</td><td>35</td><td>29.65 ns</td><td>0.582 ns</td><td>0.516 ns</td><td>0.000</td><td>62 B</td><td>-</td><td>-</td><td>-</td><td>-</td>
 </tr></tbody></table>
 </body>
 </html>

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>DisassemblyDiagnoser Output Dotnetos.AsyncExpert.Homework.Module01.Benchmark.FibonacciCalc-20210305-153503</title>
+
+<style type="text/css">
+    table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+    td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: left; }
+    tr { background-color: #fff; border-top: 1px solid #ccc; }
+    tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<table>
+<thead>
+<tr><th colspan="2">FibonacciCalc.Recursive</th></tr>
+<tr>
+<th>.NET Core 3.1.12 (CoreCLR 4.700.21.6504, CoreFX 4.700.21.6905), X64 RyuJIT</th>
+<th>.NET Core 3.1.12 (CoreCLR 4.700.21.6504, CoreFX 4.700.21.6905), X64 RyuJIT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align:top;"><pre><code>
+Dotnetos.AsyncExpert.Homework.Module01.Benchmark.FibonacciCalc.Recursive(UInt64)
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,20
+mov       rdi,rcx
+mov       rsi,rdx
+cmp       rsi,1
+je        short 00007FF903F43DD9
+cmp       rsi,2
+jne       short 00007FF903F43DE6
+mov       eax,1
+add       rsp,20
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+lea       rdx,[rsi+0FFFE]
+mov       rcx,rdi
+call      Dotnetos.AsyncExpert.Homework.Module01.Benchmark.FibonacciCalc.Recursive(UInt64)
+mov       rbx,rax
+lea       rdx,[rsi+0FFFF]
+mov       rcx,rdi
+call      Dotnetos.AsyncExpert.Homework.Module01.Benchmark.FibonacciCalc.Recursive(UInt64)
+add       rax,rbx
+add       rsp,20
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+Dotnetos.AsyncExpert.Homework.Module01.Benchmark.FibonacciCalc.Recursive(UInt64)
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,20
+mov       rdi,rcx
+mov       rsi,rdx
+cmp       rsi,1
+je        short 00007FF903F33A59
+cmp       rsi,2
+jne       short 00007FF903F33A66
+mov       eax,1
+add       rsp,20
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+lea       rdx,[rsi+0FFFE]
+mov       rcx,rdi
+call      Dotnetos.AsyncExpert.Homework.Module01.Benchmark.FibonacciCalc.Recursive(UInt64)
+mov       rbx,rax
+lea       rdx,[rsi+0FFFF]
+mov       rcx,rdi
+call      Dotnetos.AsyncExpert.Homework.Module01.Benchmark.FibonacciCalc.Recursive(UInt64)
+add       rax,rbx
+add       rsp,20
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+
+</code></pre></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr><th colspan="2">FibonacciCalc.RecursiveWithMemoization</th></tr>
+<tr>
+<th>.NET Core 3.1.12 (CoreCLR 4.700.21.6504, CoreFX 4.700.21.6905), X64 RyuJIT</th>
+<th>.NET Core 3.1.12 (CoreCLR 4.700.21.6504, CoreFX 4.700.21.6905), X64 RyuJIT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align:top;"><pre><code>
+Dotnetos.AsyncExpert.Homework.Module01.Benchmark.FibonacciCalc.RecursiveWithMemoization(UInt64)
+push      rsi
+sub       rsp,20
+mov       rsi,rdx
+cmp       rsi,1
+je        short 00007FF903F343B4
+cmp       rsi,2
+jne       short 00007FF903F343BF
+mov       eax,1
+add       rsp,20
+pop       rsi
+ret
+test      rsi,rsi
+jl        short 00007FF903F3440B
+mov       rdx,rsi
+mov       rcx,offset MT_System.UInt64[]
+call      CORINFO_HELP_NEWARR_1_VC
+mov       ecx,[rax+8]
+cmp       ecx,0
+jbe       short 00007FF903F34411
+mov       qword ptr [rax+10],1
+cmp       ecx,1
+jbe       short 00007FF903F34411
+mov       qword ptr [rax+18],1
+mov       rcx,rsi
+mov       rdx,rax
+mov       rax,offset Dotnetos.AsyncExpert.Homework.Module01.Benchmark.FibonacciCalc.RecursiveMemo(UInt64, UInt64[])
+add       rsp,20
+pop       rsi
+jmp       rax
+call      CORINFO_HELP_OVERFLOW
+int       3
+call      CORINFO_HELP_RNGCHKFAIL
+int       3
+
+Dotnetos.AsyncExpert.Homework.Module01.Benchmark.FibonacciCalc.RecursiveMemo(UInt64, UInt64[])
+push      r15
+push      r14
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,28
+mov       rsi,rdx
+lea       rdi,[rcx+0FFFF]
+lea       rbx,[rdi+0FFFF]
+lea       rcx,[rbx+0FFFF]
+test      rcx,rcx
+jl        near ptr 00007FF903F34373
+mov       rbp,rcx
+mov       ecx,[rsi+8]
+movsxd    r14,ecx
+cmp       rbp,r14
+jae       short 00007FF903F34379
+cmp       qword ptr [rsi+rbp*8+10],0
+jne       short 00007FF903F3431D
+mov       r15,rbp
+mov       rcx,rbx
+mov       rdx,rsi
+call      Dotnetos.AsyncExpert.Homework.Module01.Benchmark.FibonacciCalc.RecursiveMemo(UInt64, UInt64[])
+mov       [rsi+r15*8+10],rax
+test      rbx,rbx
+jl        short 00007FF903F34373
+cmp       rbx,r14
+jae       short 00007FF903F34379
+cmp       qword ptr [rsi+rbx*8+10],0
+jne       short 00007FF903F34342
+mov       r15,rbx
+mov       rcx,rdi
+mov       rdx,rsi
+call      Dotnetos.AsyncExpert.Homework.Module01.Benchmark.FibonacciCalc.RecursiveMemo(UInt64, UInt64[])
+mov       [rsi+r15*8+10],rax
+test      rdi,rdi
+jl        short 00007FF903F34373
+mov       rax,rdi
+mov       rdx,rax
+mov       rcx,[rsi+rbp*8+10]
+add       rcx,[rsi+rbx*8+10]
+cmp       rdx,r14
+jae       short 00007FF903F34379
+mov       [rsi+rdx*8+10],rcx
+mov       rax,[rsi+rax*8+10]
+add       rsp,28
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r14
+pop       r15
+ret
+call      CORINFO_HELP_OVERFLOW
+int       3
+call      CORINFO_HELP_RNGCHKFAIL
+int       3
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+Dotnetos.AsyncExpert.Homework.Module01.Benchmark.FibonacciCalc.RecursiveWithMemoization(UInt64)
+push      rsi
+sub       rsp,20
+mov       rsi,rdx
+cmp       rsi,1
+je        short 00007FF903F140D4
+cmp       rsi,2
+jne       short 00007FF903F140DF
+mov       eax,1
+add       rsp,20
+pop       rsi
+ret
+test      rsi,rsi
+jl        short 00007FF903F1412B
+mov       rdx,rsi
+mov       rcx,offset MT_System.UInt64[]
+call      CORINFO_HELP_NEWARR_1_VC
+mov       ecx,[rax+8]
+cmp       ecx,0
+jbe       short 00007FF903F14131
+mov       qword ptr [rax+10],1
+cmp       ecx,1
+jbe       short 00007FF903F14131
+mov       qword ptr [rax+18],1
+mov       rcx,rsi
+mov       rdx,rax
+mov       rax,offset Dotnetos.AsyncExpert.Homework.Module01.Benchmark.FibonacciCalc.RecursiveMemo(UInt64, UInt64[])
+add       rsp,20
+pop       rsi
+jmp       rax
+call      CORINFO_HELP_OVERFLOW
+int       3
+call      CORINFO_HELP_RNGCHKFAIL
+int       3
+
+Dotnetos.AsyncExpert.Homework.Module01.Benchmark.FibonacciCalc.RecursiveMemo(UInt64, UInt64[])
+push      r15
+push      r14
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,28
+mov       rsi,rdx
+lea       rdi,[rcx+0FFFF]
+lea       rbx,[rdi+0FFFF]
+lea       rcx,[rbx+0FFFF]
+test      rcx,rcx
+jl        near ptr 00007FF903F14093
+mov       rbp,rcx
+mov       ecx,[rsi+8]
+movsxd    r14,ecx
+cmp       rbp,r14
+jae       short 00007FF903F14099
+cmp       qword ptr [rsi+rbp*8+10],0
+jne       short 00007FF903F1403D
+mov       r15,rbp
+mov       rcx,rbx
+mov       rdx,rsi
+call      Dotnetos.AsyncExpert.Homework.Module01.Benchmark.FibonacciCalc.RecursiveMemo(UInt64, UInt64[])
+mov       [rsi+r15*8+10],rax
+test      rbx,rbx
+jl        short 00007FF903F14093
+cmp       rbx,r14
+jae       short 00007FF903F14099
+cmp       qword ptr [rsi+rbx*8+10],0
+jne       short 00007FF903F14062
+mov       r15,rbx
+mov       rcx,rdi
+mov       rdx,rsi
+call      Dotnetos.AsyncExpert.Homework.Module01.Benchmark.FibonacciCalc.RecursiveMemo(UInt64, UInt64[])
+mov       [rsi+r15*8+10],rax
+test      rdi,rdi
+jl        short 00007FF903F14093
+mov       rax,rdi
+mov       rdx,rax
+mov       rcx,[rsi+rbp*8+10]
+add       rcx,[rsi+rbx*8+10]
+cmp       rdx,r14
+jae       short 00007FF903F14099
+mov       [rsi+rdx*8+10],rcx
+mov       rax,[rsi+rax*8+10]
+add       rsp,28
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r14
+pop       r15
+ret
+call      CORINFO_HELP_OVERFLOW
+int       3
+call      CORINFO_HELP_RNGCHKFAIL
+int       3
+
+</code></pre></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr><th colspan="2">FibonacciCalc.Iterative</th></tr>
+<tr>
+<th>.NET Core 3.1.12 (CoreCLR 4.700.21.6504, CoreFX 4.700.21.6905), X64 RyuJIT</th>
+<th>.NET Core 3.1.12 (CoreCLR 4.700.21.6504, CoreFX 4.700.21.6905), X64 RyuJIT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align:top;"><pre><code>
+Dotnetos.AsyncExpert.Homework.Module01.Benchmark.FibonacciCalc.Iterative(UInt64)
+cmp       rdx,1
+je        short 00007FF903F3256C
+cmp       rdx,2
+jne       short 00007FF903F32572
+mov       eax,1
+ret
+mov       eax,1
+mov       ecx,1
+mov       r8d,2
+cmp       rdx,2
+jbe       short 00007FF903F32599
+add       rax,rcx
+inc       r8
+cmp       r8,rdx
+jb        short 00007FF903F32594
+ret
+xchg      rax,rcx
+jmp       short 00007FF903F32588
+mov       rax,rcx
+jmp       short 00007FF903F32593
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+Dotnetos.AsyncExpert.Homework.Module01.Benchmark.FibonacciCalc.Iterative(UInt64)
+cmp       rdx,1
+je        short 00007FF903F4269C
+cmp       rdx,2
+jne       short 00007FF903F426A2
+mov       eax,1
+ret
+mov       eax,1
+mov       ecx,1
+mov       r8d,2
+cmp       rdx,2
+jbe       short 00007FF903F426C9
+add       rax,rcx
+inc       r8
+cmp       r8,rdx
+jb        short 00007FF903F426C4
+ret
+xchg      rax,rcx
+jmp       short 00007FF903F426B8
+mov       rax,rcx
+jmp       short 00007FF903F426C3
+
+</code></pre></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

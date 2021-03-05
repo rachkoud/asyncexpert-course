@@ -26,14 +26,39 @@ namespace Dotnetos.AsyncExpert.Homework.Module01.Benchmark
         [ArgumentsSource(nameof(Data))]
         public ulong RecursiveWithMemoization(ulong n)
         {
-            return 0;
+            if (n == 1 || n == 2) return 1;
+            Dictionary<ulong, ulong> results = new() { { 0, 0 }, { 1, 1 } };
+
+            return RecursiveFibMemo(n, results);
         }
-        
+
+        private static ulong RecursiveFibMemo(ulong n, Dictionary<ulong, ulong> results)
+        {
+            if (results.ContainsKey(n))
+                return results[n];
+
+            var value = RecursiveFibMemo(n - 1, results) + RecursiveFibMemo(n - 2, results);
+
+            results[n] = value;
+
+            return value;
+        }
+
         [Benchmark]
         [ArgumentsSource(nameof(Data))]
         public ulong Iterative(ulong n)
         {
-            return 0;
+            if (n == 1 || n == 2) return 1;
+
+            ulong a = 1, b = 1;
+            for (ulong i = 2; i < n; i++)
+            {
+                ulong temp = a + b;
+                a = b;
+                b = temp;
+            }
+
+            return b;
         }
 
         public IEnumerable<ulong> Data()
